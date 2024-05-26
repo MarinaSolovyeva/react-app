@@ -1,14 +1,17 @@
 // функциональный компонент, который возвращает JSX код
 const App = () => {
-  console.log('Called');
-  let [buttonText, setButtonTest] = React.useState('Click me');
+  const [buttonText, setButtonTest] = React.useState('Click me');
+  const [classesList, setclassesList] = React.useState();
   const onButtonClick = () => {
     setButtonTest('Hello from React');
+    setclassesList('green-btn');
   };
 
   return (
     <div className="app">
-      <button onClick={onButtonClick}>{buttonText}</button>
+      <button onClick={onButtonClick} className={classesList}>
+        {buttonText}
+      </button>
     </div>
   );
 };
