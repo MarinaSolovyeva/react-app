@@ -1,10 +1,9 @@
 // функциональный компонент, который возвращает JSX код
 const App = () => {
   console.log('Called');
-  let buttonText = 'Click me please';
+  let [buttonText, setButtonTest] = React.useState('Click me');
   const onButtonClick = () => {
-    buttonText = 'Hello from React';
-    console.log(buttonText);
+    setButtonTest('Hello from React');
   };
 
   return (
